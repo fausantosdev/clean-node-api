@@ -4,7 +4,7 @@ import { DbAddAccount } from './db-add-account'
 const makeEncrypter = (): Encrypter => {
   class EncrypterStub implements Encrypter {
     async encrypt (value: string): Promise<string> {
-      return new Promise(resolve => resolve('hashed_value'))
+      return new Promise(resolve => resolve('hashed_password'))
     }
   }
 
@@ -97,23 +97,26 @@ describe('DbAddAccount Usecase', () => {
     expect(addSpy).toHaveBeenCalledWith({
       name: 'valid_name',
       email: 'valid_email',
-      password: 'hashed_value'
+      password: 'hashed_password'
     })
   })
 
-  test('Should throw if Encrypter throws', async () => {
-    const { sut, addAccountRepositoryStub } = makeSut()
-
-    jest.spyOn(addAccountRepositoryStub, 'add').mockReturnValueOnce(new Promise((resolve, reject) => reject(new Error())))
+  test('Should return an account on success', async () => {
+    const { sut } = makeSut()
 
     const accountData = {
       name: 'valid_name',
       email: 'valid_email',
-      password: 'hashed_password'
+      password: 'valid_password'
     }
 
-    const promisse = sut.add(accountData)
+    const account = await sut.add(accountData)
 
-    await expect(promisse).rejects.toThrow()
+    expect(account).toEqual({
+      id: 'valid_id',
+      name: 'valid_name',
+      email: 'valid_email',
+      password: 'hashed_password'
+    })
   })
 })
