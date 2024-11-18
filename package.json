@@ -1,0 +1,28 @@
+{
+  "name": "clean-node-api",
+  "version": "1.0.0",
+  "description": "NodeJs, Typescript, TDD, DDD, Clean Architecture and SOLID",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fausantosdev/clean-node-api.git"
+  },
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "tdd",
+    "ddd",
+    "clean",
+    "architecture",
+    "solid"
+  ],
+  "author": "Flávio Santos <fausantosdev@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fausantosdev/clean-node-api/issues"
+  },
+  "homepage": "https://github.com/fausantosdev/clean-node-api#readme"
+}
