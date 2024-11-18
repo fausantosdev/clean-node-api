@@ -26,6 +26,8 @@
   },
   "homepage": "https://github.com/fausantosdev/clean-node-api#readme",
   "devDependencies": {
-    "git-commit-msg-linter": "^5.0.8"
+    "@types/node": "^22.9.0",
+    "git-commit-msg-linter": "^5.0.8",
+    "typescript": "^5.6.3"
   }
 }
