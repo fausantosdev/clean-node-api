@@ -4,7 +4,8 @@
   "description": "NodeJs, Typescript, TDD, DDD, Clean Architecture and SOLID",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,8 @@
     "eslint": "^9.15.0",
     "git-commit-msg-linter": "^5.0.8",
     "globals": "^15.12.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.14.0"
   }
